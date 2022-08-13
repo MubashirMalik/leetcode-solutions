@@ -1,17 +1,25 @@
 func longestCommonPrefix(strs []string) string {
-    lcp := len(strs[0])
-    for i := 1; i < len(strs); i++ {
-        count := 0
-        for j := 0; j < len(strs[i]) && j < len(strs[0]); j++ {
-            if strs[0][j] == strs[i][j] && count < lcp {
-                count++
-            } else {
+    prefix := ""
+    if len(strs) == 0 {
+        return prefix
+    }
+    
+    for i := 0; i < len(strs[0]); i++ {
+        var flag bool
+        for j := 1; j < len(strs); j++ {
+            if i >= len(strs[j]) {
+                flag = true
                 break
             }
+            
+            if strs[j][i] != strs[0][i] {
+                return prefix
+            }
         }
-        if lcp > count {
-            lcp = count
+        
+        if !flag {
+             prefix += string(strs[0][i])
         }
     }
-    return strs[0][:lcp]
+    return prefix
 }
