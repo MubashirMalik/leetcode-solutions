@@ -8,6 +8,5 @@ class Solution:
                     return True
             else: 
                 dic[i] = 1
-        print(dic)
         return False
         
