@@ -3,6 +3,7 @@ class Solution:
        
         if numRows == 1:
             return s
+        
         zigzag = ""
         step = 0
         row = 0
