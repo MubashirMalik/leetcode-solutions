@@ -40,7 +40,7 @@ class Solution:
             else:
                 merged_list.append(nums2[j])
                 j+= 1
-            print(med_index)
+            
             if med_index == total_len//2:
                 if not even:
                     return merged_list[med_index]
