@@ -23,7 +23,6 @@ class Solution:
                 n2 = l2.val
                 l2 = l2.next
         
-            
             addition = n1 + n2 + carry
             to_add = 0
             if addition > 9:
@@ -40,7 +39,6 @@ class Solution:
             else:
                 temp.next = ListNode(to_add)
                 temp = temp.next
-                
             
             
         if carry == 1:
