@@ -14,14 +14,16 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
         var v1, v2 int
         if l1 != nil {
             v1 = l1.Val
+            l1 = l1.Next
         } 
         if l2 != nil {
             v2 = l2.Val
+            l2 = l2.Next
         }
         
         newNode := &ListNode{}
         newNode.Val = v1 + v2 + carry
-        if newNode.Val >= 10 {
+        if newNode.Val > 9 {
             newNode.Val = newNode.Val % 10
             carry = 1
         } else {
@@ -36,14 +38,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
         if sumHead == nil {
             sumHead = newNode
         } 
-        
         sumPrev = newNode
-        if l1 != nil {
-            l1 = l1.Next
-        } 
-        if l2 != nil {
-            l2 = l2.Next
-        }
     }    
     
     if carry == 1 {
