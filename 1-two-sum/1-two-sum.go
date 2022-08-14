@@ -1,34 +1,15 @@
-import "sort"
-
 func twoSum(nums []int, target int) []int {
-    copyNums := make([]int, len(nums))
+    
+    // map (number => index)
+    m := make(map[int]int)
+    
+    var inverse int
     for i := range nums {
-        copyNums[i] = nums[i]
-    }
-    sort.Ints(nums)
-    
-    var num1, num2 int
-    for i := 0; i < len(nums); i++ {
-        for j := i + 1; j < len(nums); j++ {
-            if nums[i] + nums[j] == target {
-                num1 = nums[i]
-                num2 = nums[j]
-                break
-            }
+        inverse = target - nums[i]
+        if idx, isFound := m[inverse]; isFound {
+            return []int{idx, i}
         }
+        m[nums[i]] = i
     }
-    
-    var idx1, idx2 int
-    var isSet bool 
-    for i := 0; i < len(copyNums); i++ {
-        if copyNums[i] == num1 && !isSet {
-            idx1 = i
-            isSet = true
-        } else if copyNums[i] == num2 {
-            idx2 = i
-        }
-    }
-    
-    
-    return []int{idx1, idx2}
+    return []int{0, 0}
 }
