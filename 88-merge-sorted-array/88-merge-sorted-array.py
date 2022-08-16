@@ -6,35 +6,31 @@ class Solution:
         if len(nums2) == 0:
             return nums1
         
-        i = 0
-        j = 0
-        total =  m + n
+        total = m + n
+        m-=1
+        n-=1
         
-        nums3 = []
-        for _ in range(total):
-
-                
-            if i< m and j < n:
-                if nums1[i] < nums2[j]:
-                    nums3.append(nums1[i])
-                    i += 1
+        for i in range(total-1, -1, -1):
+            if m >= 0 and n >=0:
+                if nums1[m] > nums2[n]:
+                    nums1[i] = nums1[m]
+                    m-=1
                 else:
-                    nums3.append(nums2[j])
-                    j+= 1
+                    nums1[i] = nums2[n]
+                    n-=1
             else:
-                if i == m:
-                    for r in range(j, n):
-                        nums3.append(nums2[r])
-                    break
-                if j == n:
-                    for r in range(i, m):
-                        nums3.append(nums1[r])
-                        print(r)
-                        print(nums3)
-                    break
-            # print(i)
-            # print(j)
-            # print(nums3)
-        for k in range(len(nums3)):
-            nums1[k] = nums3[k]
+                if m == -1 and n == -1:
+                    return nums1
+                elif m == -1:
+                    nums1[i] = nums2[n] 
+                    n -=1
+                else:
+                    nums1[i] = nums1[m]
+                    m -=1
+                
+            print(nums1)
+                
+        
+        
+        
             
