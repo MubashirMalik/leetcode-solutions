@@ -5,8 +5,9 @@ class Solution:
         
         dic = {}
         for i in range(len(nums)):
-            if (target - nums[i]) in dic and dic[target - nums[i]] != i:
-                return [i, dic[target - nums[i]]]
+            x = target - nums[i]
+            if x in dic and dic[x] != i:
+                return [i, dic[x]]
             dic[nums[i]] = i
             
                         
