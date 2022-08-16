@@ -3,10 +3,11 @@ class Solution:
         i = 0
         j = 0
         
+        dic = {}
         for i in range(len(nums)):
+            if (target - nums[i]) in dic and dic[target - nums[i]] != i:
+                return [i, dic[target - nums[i]]]
+            dic[nums[i]] = i
             
-            if (target - nums[i]) in nums and i!= nums.index(target - nums[i]):
-                
-                return [i, nums.index(target - nums[i])]
                         
         
