@@ -28,7 +28,6 @@ class Solution:
                     nums1[i] = nums1[m]
                     m -=1
                 
-            print(nums1)
                 
         
         
