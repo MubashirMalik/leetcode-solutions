@@ -14,6 +14,7 @@ class Solution:
                 i = mid
             else:
                 return mid
+            
             if abs(j-i) == 1:
                 return min(j, i)
                 
