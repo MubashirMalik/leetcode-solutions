@@ -3,8 +3,6 @@ class Solution:
         for arr in matrix:
             if target > arr[-1]:
                 continue
-            elif target == arr[-1]:
-                return True
             else:
                 i = 0
                 j = len(arr) - 1
