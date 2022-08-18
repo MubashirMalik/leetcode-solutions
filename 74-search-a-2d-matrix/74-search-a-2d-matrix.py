@@ -1,8 +1,14 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         for arr in matrix:
-            if self.binarySearch(arr, target):
+            temp = arr
+            if target > arr[-1]:
+                continue
+            elif target == arr[-1]:
                 return True
+            else:
+                if self.binarySearch(arr, target):
+                    return True
         return False
         
     def binarySearch(self, arr, item):
