@@ -1,6 +1,6 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        for arr in matrix:
+        for _, arr in enumerate(matrix):
             if target > arr[-1]:
                 continue
             else:
