@@ -6,15 +6,18 @@ class Solution:
         if r * c != len(mat) * len(mat[0]):
             return mat
         else:
-            new_mat = [*map(lambda a: [a]*c,[0]*r)]
+            new_mat = []
             
             k = 0
             l = 0
+            sub_mat = []
             for i in mat:
                 for j in i:
-                    new_mat[k][l] = j
+                    sub_mat.append(j)
                     l += 1
                     if l == c:
+                        new_mat.append(sub_mat.copy())
+                        sub_mat = []
                         l = 0
                         k +=1
             return new_mat
