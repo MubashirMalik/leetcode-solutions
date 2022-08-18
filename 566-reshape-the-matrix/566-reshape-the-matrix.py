@@ -7,7 +7,6 @@ class Solution:
             return mat
         else:
             new_mat = []
-            
             k = 0
             l = 0
             sub_mat = []
