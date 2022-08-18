@@ -8,7 +8,6 @@ class Solution:
                 prev = 0
                 s = 0
                 for j, k in enumerate(tri[-1]):
-        
                     s = prev + k
                     row[j] = s
                     prev = k
