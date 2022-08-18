@@ -21,6 +21,7 @@ func searchMatrix(matrix [][]int, target int) bool {
                     right = mid - 1
                 }
             } 
+            return false
         }       
     }
     return false
