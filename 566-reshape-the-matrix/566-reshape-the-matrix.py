@@ -16,7 +16,7 @@ class Solution:
                     sub_mat.append(j)
                     l += 1
                     if l == c:
-                        new_mat.append(sub_mat.copy())
+                        new_mat.append([*sub_mat])
                         sub_mat = []
                         l = 0
                         k +=1
