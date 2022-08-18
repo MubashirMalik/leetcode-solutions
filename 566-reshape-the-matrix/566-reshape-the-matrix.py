@@ -11,8 +11,8 @@ class Solution:
             k = 0
             l = 0
             sub_mat = []
-            for i in mat:
-                for j in i:
+            for _, i in enumerate(mat):
+                for _, j in enumerate(i):
                     sub_mat.append(j)
                     l += 1
                     if l == c:
