@@ -7,7 +7,7 @@ class Solution:
             elif target == arr[-1]:
                 return True
             else:
-                if self.binarySearch(arr, target):
+                if self.binarySearch(temp, target):
                     return True
         return False
         
