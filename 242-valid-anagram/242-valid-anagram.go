@@ -16,9 +16,9 @@ func isAnagram(s string, t string) bool {
             } else {
                 m[t[i]]--   
             }
-        } else {
-            return false
-        }
+            continue
+        } 
+        return false
     }
     return true
 }
