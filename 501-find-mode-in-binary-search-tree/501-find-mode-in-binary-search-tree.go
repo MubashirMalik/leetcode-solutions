@@ -31,7 +31,6 @@ func findMode(root *TreeNode) []int {
     }
     InOrder(root)
     
-    fmt.Println(occurrences)
     var modes []int
     for k,v := range occurrences {
         if v == max {
